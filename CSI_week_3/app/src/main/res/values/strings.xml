@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">CSI_week_1</string>
+    <string name="portret">portret</string>
+    <string name="repport">Repport</string>
+    <string name="de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem">De verdachte heet henk hij is kaal lelijk en ik krijg nog geld van hem De verdachte heet henk hij is kaal lelijk en ik krijg nog geld van hem De verdachte heet henk hij is kaal lelijk en ik krijg nog geld van hem De verdachte heet henk hij is kaal lelijk en ik krijg nog geld van hem</string>
+    <string name="_25_000">$25.000</string>
+    <string name="bounty">Bounty</string>
+    <string name="_27">27</string>
+    <string name="age">Age</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="name">Name</string>
+    <string name="henk">Henk</string>
+    <string name="title_activity_report">ReportActivity</string>
+    <string name="back">Back</string>
+    <string name="send">Send</string>
+    <string name="call_113">Call 113</string>
+    <string name="take_picture">Take picture</string>
+    <string name="gps_position">GPS position</string>
+    <string name="title_activity_criminallistv2">Criminallistv2</string>
+</resources>
