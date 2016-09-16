@@ -18,23 +18,25 @@ import com.google.android.gms.common.api.GoogleApiClient;
 
 public class Criminallistv2 extends AppCompatActivity {
 
-    private final Object AdapterView;
+    //private final Object AdapterView;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
 
-    public Criminallistv2(Object adapterView) {
-        AdapterView = adapterView;
-    }
+    //public Criminallistv2(Object adapterView) {
+     //   AdapterView = adapterView;
+    //}
+
+    public Criminallistv2() {}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_criminallistv2);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         //Get a reference to the listview
         ListView listview = (ListView) findViewById(R.id.lvCriminals);
@@ -73,8 +75,8 @@ public class Criminallistv2 extends AppCompatActivity {
 
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
+        //client.connect();
+        /*Action viewAction = Action.newAction(
                 Action.TYPE_VIEW, // TODO: choose an action type.
                 "Criminallistv2 Page", // TODO: Define a title for the content shown.
                 // TODO: If you have web page content that matches this app activity's content,
@@ -84,7 +86,7 @@ public class Criminallistv2 extends AppCompatActivity {
                 // TODO: Make sure this auto-generated app URL is correct.
                 Uri.parse("android-app://com.example.gm_ro.csi_week_1/http/host/path")
         );
-        AppIndex.AppIndexApi.start(client, viewAction);
+        AppIndex.AppIndexApi.start(client, viewAction);*/
     }
 
     @Override
