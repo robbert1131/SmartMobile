@@ -14,17 +14,38 @@
     android:contentDescription="@string/portret"
     android:background="@color/Grayish">
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/imageView"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/mybadguy"
-        android:contentDescription="@string/portret"
-        android:layout_weight="0.24" />
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="121dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageView"
+            android:layout_gravity="left|center_horizontal"
+            android:src="@drawable/mybadguy"
+            android:contentDescription="@string/portret"
+            android:layout_weight="0.3"
+            android:layout_margin="0.3dp" />
+
+        <TextView
+            android:layout_width="208dp"
+            android:layout_height="92dp"
+            android:text="@string/de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem"
+            android:id="@+id/tvDesc"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:scrollIndicators="right"
+            android:textSize="16dp"
+            android:layout_gravity="right"
+            android:layout_weight="0.6"
+            android:layout_row="0"
+            android:layout_column="2" />
+
+    </GridLayout>
 
     <TableLayout
-        android:layout_width="311dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:id="@+id/Info"
@@ -73,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/male"
-                android:id="@+id/textView4"
+                android:id="@+id/tvGender"
                 android:layout_weight="0.5"
                 android:textStyle="bold"
                 android:textSize="20dp" />
@@ -97,7 +118,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_27"
-                android:id="@+id/textView6"
+                android:id="@+id/tvAge"
                 android:layout_weight="0.5"
                 android:textStyle="bold"
                 android:textSize="20dp" />
@@ -121,24 +142,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/_25_000"
-                android:id="@+id/textView8"
+                android:id="@+id/tvBounty"
                 android:layout_weight="0.5"
                 android:textStyle="bold"
                 android:textSize="20dp" />
         </TableRow>
 
     </TableLayout>
-
-    <TextView
-        android:layout_width="312dp"
-        android:layout_height="60dp"
-        android:text="@string/de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem_de_verdachte_heet_henk_hij_is_kaal_lelijk_en_ik_krijg_nog_geld_van_hem"
-        android:id="@+id/textView9"
-        android:layout_weight="0.20"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="20dp"
-        android:scrollIndicators="right"
-        android:textSize="16dp" />
 
     <Button
         style="@style/button"
@@ -147,8 +157,13 @@
         android:text="@string/repport"
         android:id="@+id/bRepport"
         android:layout_gravity="center_horizontal"
-        android:layout_weight="0.24"
         android:layout_marginTop="30dp"
         android:background="@color/redish"
         android:onClick="Bopenpage" />
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lvCrimes" />
+
 </LinearLayout>

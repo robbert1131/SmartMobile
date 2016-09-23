@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.gms.appindexing.Action;
@@ -23,6 +24,8 @@ public class CSI_week_1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        final CriminalProvider criminalProvider = new CriminalProvider(getApplicationContext());
         setContentView(R.layout.activity_csi_week_1);
 
         Button button = (Button) findViewById(R.id.bRepport);
@@ -38,19 +41,44 @@ public class CSI_week_1 extends AppCompatActivity {
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
         client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
-        String newString;
+        Integer pos = 0;
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
             if(extras == null) {
-                newString= null;
+               pos = 0;
             } else {
-                newString= extras.getString("name_of_person");
+                pos = getIntent().getExtras().getInt("posistion");
+                // getting objexts
+                TextView tvName = (TextView) findViewById(R.id.tvName);
+                TextView tvAge = (TextView) findViewById(R.id.tvAge);
+                TextView tvGender = (TextView) findViewById(R.id.tvGender);
+                TextView tvBounty = (TextView) findViewById(R.id.tvBounty);
+                TextView tvDesc = (TextView) findViewById(R.id.tvDesc);
+                // getting criminal details
+                String name = criminalProvider.GetCriminal(pos).name;
+                String gender = criminalProvider.GetCriminal(pos).gender;
+                Integer iage = criminalProvider.GetCriminal(pos).age;
+                String age = iage.toString();
+                Integer ibounty = criminalProvider.GetCriminal(pos).getBountyInDollars();
+                String bounty = ibounty.toString();
+                String desc = criminalProvider.GetCriminal(pos).description;
+                // setting values
+                tvName.setText(name);
+                tvAge.setText(age);
+                tvGender.setText(gender);
+                tvBounty.setText(bounty);
+                tvDesc.setText(desc);
+                ListView listview = (ListView) findViewById(R.id.lvCrimes);
+                //final String[] criminals = getResources().getStringArray(R.array.criminalNames);
+                Criminal criminal = criminalProvider.GetCriminal(pos);
+                final Crimelistadapter adapter = new Crimelistadapter(getApplicationContext(), criminal.crimes);
+                listview.setAdapter(adapter);
             }
         } else {
-            newString= (String) savedInstanceState.getSerializable("name_of_person");
+            /*newString= (String) savedInstanceState.getSerializable("posistion");
             TextView t = (TextView) findViewById(R.id.tvName);
             assert t != null;
-            t.setText(newString);
+            t.setText(newString);*/
         }
     }
 
